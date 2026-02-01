@@ -136,6 +136,10 @@ REM Скачиваем конфиги напрямую из репозитори
 curl -g -k -L -# -o "%CD%\_internal\Utils\clamav\clamav.conf" "https://raw.githubusercontent.com/anton18-png/Mate-Security/main/config/clamav.conf"
 curl -g -k -L -# -o "%CD%\_internal\Utils\clamav\freshclam.conf" "https://raw.githubusercontent.com/anton18-png/Mate-Security/main/config/freshclam.conf"
 
+REM Создаем пустые лог-файлы
+echo. > "%CD%\_internal\Utils\clamav\clamd.log"
+echo. > "%CD%\_internal\Utils\clamav\freshclam.log"
+
 echo.
 echo ========================================
 echo   Установка завершена!
@@ -145,7 +149,6 @@ echo Файлы расположены:
 echo   ClamAV:        %CD%\_internal\Utils\clamav\
 echo   Базы данных:   %CD%\_internal\database\
 echo   Логи:          %CD%\_internal\logs\
-echo   Карантин:      %CD%\_internal\quarantine\
 echo.
 pause
 ```
@@ -237,3 +240,4 @@ Mate-Security/
 ---
 
 **Mate Security** — твой бесплатный open-source щит для Windows 💚
+
