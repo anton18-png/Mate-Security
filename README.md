@@ -164,8 +164,6 @@ pause
 
 ## Альтернативная ручная установка
 
-### Если нет интернета или нужна ручная настройка:
-
 #### Шаг A: Установка ClamAV вручную
 1. Скачай ClamAV с [официального сайта](https://www.clamav.net/downloads):
    - Или прямую ссылку: `https://github.com/Cisco-Talos/clamav/releases/download/clamav-1.5.1/clamav-1.5.1.win.x64.zip`
@@ -240,4 +238,5 @@ Mate-Security/
 ---
 
 **Mate Security** — твой бесплатный open-source щит для Windows 💚
+
 
