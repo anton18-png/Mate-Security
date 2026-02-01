@@ -44,10 +44,10 @@ pip install -r requirements.txt
 # 3. Скачиваем Mate-Security-Setup.exe, распаковываем и настраиваем конфиги ClamAV
 
 # 4. Запускаем
-python main.py
+python main.pyw
 
 # или в фоне (в трей)
-python main.py --background
+python main.pyw --background
 ```
 
 ## Сборка в один .exe
@@ -76,7 +76,7 @@ pyinstaller ^
 
 ```
 Mate-Security/
-├── main.py               # точка входа
+├── main.pyw              # точка входа
 ├── gui/
 │   └── app.py            # основной интерфейс
 ├── core/
@@ -110,5 +110,6 @@ Mate-Security/
 ## Лицензия MIT
 
 ---
+
 
 **Mate Security** — твой бесплатный open-source щит для Windows 💚
