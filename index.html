@@ -3,227 +3,252 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mate Security — бесплатный антивирус на базе ClamAV</title>
-  <meta name="description" content="Лёгкий, современный и полностью бесплатный антивирус для Windows на базе ClamAV с красивым интерфейсом."/>
+  <title>Mate Security — Бесплатный антивирус на базе ClamAV для Windows</title>
+  <meta name="description" content="Лёгкий, современный и полностью бесплатный антивирус для Windows на базе ClamAV с красивым интерфейсом и мощной защитой."/>
+  <meta name="keywords" content="антивирус бесплатный, clamav, windows защита, mate security, сканирование вирусов">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --bg: #0f1117;
-      --text: #e2e8f0;
-      --primary: #10b981;
-      --primary-dark: #059669;
-      --card: #1e293b;
-      --border: #334155;
-      --accent: #8b5cf6;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    header {
-      padding: 80px 0 60px;
-      text-align: center;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      border-bottom: 1px solid var(--border);
-    }
-
-    h1 {
-      font-size: clamp(2.8rem, 8vw, 5.5rem);
-      font-weight: 700;
-      margin-bottom: 16px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .subtitle {
-      font-size: 1.4rem;
-      color: #94a3b8;
-      max-width: 700px;
-      margin: 0 auto 40px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: white;
-      background: var(--primary);
-      border: none;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.25);
-    }
-
-    .btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 15px 35px rgba(16, 185, 129, 0.35);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-      margin-left: 16px;
-    }
-
-    .btn-outline:hover {
-      background: rgba(16, 185, 129, 0.1);
-    }
-
-    section {
-      padding: 80px 0;
-    }
-
-    h2 {
-      font-size: 2.8rem;
-      text-align: center;
-      margin-bottom: 48px;
-      color: white;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px 28px;
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: var(--primary);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    }
-
-    .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 16px;
-      color: var(--primary);
-    }
-
-    .install-steps {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .step {
-      background: var(--card);
-      border-left: 5px solid var(--primary);
-      padding: 24px;
-      margin-bottom: 24px;
-      border-radius: 8px;
-    }
-
-    .code-block {
-      background: #0d1117;
-      padding: 20px;
-      border-radius: 12px;
-      overflow-x: auto;
-      font-family: 'Consolas', 'Courier New', monospace;
-      color: #c9d1d9;
-      margin: 16px 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 60px 0 40px;
-      color: #64748b;
-      border-top: 1px solid var(--border);
-    }
-
-    .heart {
-      color: #ef4444;
-    }
-
-    @media (max-width: 768px) {
-      header { padding: 60px 0 40px; }
-      h1 { font-size: 3.5rem; }
-      .btn { padding: 12px 24px; font-size: 1rem; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <h1>Mate Security</h1>
-      <p class="subtitle">Лёгкий, современный и полностью бесплатный антивирус для Windows на базе ClamAV</p>
+  <nav>
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <i class="fas fa-shield-alt logo-icon"></i>
+        Mate Security
+      </a>
       
-      <div>
-        <a href="https://github.com/anton18-png/Mate-Security" class="btn btn-outline" target="_blank">GitHub</a>
+      <ul class="nav-links">
+        <li><a href="#features">Возможности</a></li>
+        <li><a href="#installation">Установка</a></li>
+        <li><a href="#screenshots">Скриншоты</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="https://github.com/anton18-png/Mate-Security" target="_blank">GitHub</a></li>
+      </ul>
+      
+    </div>
+  </nav>
+
+  <header>
+    <div class="container hero-content">
+      <h1>Mate Security</h1>
+      <p class="subtitle">Лёгкий, современный и полностью <span class="highlight">бесплатный антивирус</span> для Windows на базе <span class="highlight">ClamAV</span></p>
+      
+      <div class="btn-group">
+        <a href="https://github.com/anton18-png/Mate-Security/releases/" class="btn btn-download" target="_blank">
+          <i class="fas fa-download"></i> Скачать бесплатно
+        </a>
+        <a href="https://github.com/anton18-png/Mate-Security" class="btn btn-outline" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+      
+      <div class="stats">
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Бесплатно</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2+</div>
+          <div class="stat-label">Режима защиты</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">AES-256</div>
+          <div class="stat-label">Шифрование</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">Open Source</div>
+          <div class="stat-label">MIT лицензия</div>
+        </div>
       </div>
     </div>
   </header>
 
-  <section>
+  <main>
+    <section id="features">
+      <div class="container">
+        <div class="section-header">
+          <h2>Мощные возможности</h2>
+          <p class="section-subtitle">Полный набор инструментов для защиты вашего компьютера</p>
+        </div>
+        
+        <div class="features">
+          <div class="card">
+            <i class="fas fa-search card-icon"></i>
+            <h3>Ручное сканирование</h3>
+            <p>Сканируйте файлы, папки или целые диски одним кликом</p>
+          </div>
+          
+          <div class="card">
+            <i class="fas fa-shield-alt card-icon"></i>
+            <h3>Защита в реальном времени</h3>
+            <p>Мониторит создание файлов с двумя режимами: полный и экономный</p>
+          </div>
+          
+          <div class="card">
+            <i class="fas fa-box card-icon"></i>
+            <h3>Карантин</h3>
+            <p>Заражённые файлы помещаются в зашифрованный 7z-архив</p>
+          </div>
+          
+          <div class="card">
+            <i class="fas fa-key card-icon"></i>
+            <h3>Менеджер паролей</h3>
+            <p>Шифрование AES-256-CBC, генератор, импорт/экспорт CSV</p>
+          </div>
+          
+          <div class="card">
+            <i class="fas fa-rocket card-icon"></i>
+            <h3>Автозагрузка и трей</h3>
+            <p>Работает в фоне, сворачивается в системный трей</p>
+          </div>
+          
+          <div class="card">
+            <i class="fas fa-sync-alt card-icon"></i>
+            <h3>Обновление баз ClamAV</h3>
+            <p>Одной кнопкой — всегда свежие сигнатуры</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="installation" class="install-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Простая установка</h2>
+        </div>
+        
+        <div class="install-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Скачайте установщик</h3>
+            <p>Перейдите на страницу релизов GitHub и скачайте последнюю версию</p>
+            <div class="code-block">
+              <code>https://github.com/anton18-png/Mate-Security/releases/</code>
+            </div>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Запустите установщик</h3>
+            <p>Запустите скачанный файл и следуйте инструкциям установщика</p>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Настройте антивирус</h3>
+            <p>Обновите базы данных ClamAV и настройте защиту в реальном времени</p>
+          </div>
+        </div>
+        
+        <div class="btn-group center">
+          <a href="https://github.com/anton18-png/Mate-Security/releases/" class="btn btn-primary" target="_blank">
+            <i class="fas fa-download"></i> Скачать установщик
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2>Частые вопросы</h2>
+        </div>
+        
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Mate Security действительно бесплатен?</span>
+              <i class="fas fa-plus faq-toggle"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Да, полностью бесплатен и всегда будет таким. Проект с открытым исходным кодом.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Какие системы поддерживаются?</span>
+              <i class="fas fa-plus faq-toggle"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Windows 10 и 11 (64-битные версии).</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Как часто обновляются базы данных?</span>
+              <i class="fas fa-plus faq-toggle"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Базы данных ClamAV обновляются ежедневно.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="container">
-      <h2>Возможности</h2>
-      <div class="features">
-        <div class="card">
-          <h3>Ручное сканирование</h3>
-          <p>Сканируйте файлы, папки или целые диски одним кликом</p>
-        </div>
-        <div class="card">
-          <h3>Защита в реальном времени</h3>
-          <p>Мониторит создание новых файлов с двумя режимами: полный и экономный</p>
-        </div>
-        <div class="card">
-          <h3>Карантин</h3>
-          <p>Заражённые файлы помещаются в зашифрованный 7z-архив</p>
-        </div>
-        <div class="card">
-          <h3>Менеджер паролей</h3>
-          <p>Шифрование AES-256-CBC, генератор, импорт/экспорт CSV</p>
-        </div>
-        <div class="card">
-          <h3>Автозагрузка и трей</h3>
-          <p>Работает в фоне, сворачивается в системный трей</p>
-        </div>
-        <div class="card">
-          <h3>Обновление баз ClamAV</h3>
-          <p>Одной кнопкой — всегда свежие сигнатуры</p>
+      <div class="cta">
+        <div class="cta-content">
+          <h2>Начните использовать Mate Security</h2>
+          <a href="https://github.com/anton18-png/Mate-Security/releases/" class="btn btn-download" target="_blank">
+            <i class="fas fa-download"></i> Скачать бесплатно
+          </a>
         </div>
       </div>
     </div>
-  </section>
+  </main>
 
   <footer>
     <div class="container">
-      <p>Mate Security — open-source проект под лицензией MIT</p>
-      <p>Создано с <span class="heart">♥</span> в 2026 году</p>
+      <div class="footer-content">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <i class="fas fa-shield-alt"></i> Mate Security
+          </div>
+          <p>Бесплатный антивирус с открытым исходным кодом для Windows на базе ClamAV.</p>
+          <div class="social-links">
+            <a href="https://github.com/anton18-png/Mate-Security" class="social-link" target="_blank" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://t.me/all_tweaker" class="social-link" target="_blank" aria-label="Telegram">
+              <i class="fab fa-telegram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Проект</h4>
+          <ul>
+            <li><a href="https://github.com/anton18-png/Mate-Security" target="_blank">GitHub</a></li>
+            <li><a href="https://github.com/anton18-png/Mate-Security/releases" target="_blank">Скачать</a></li>
+            <li><a href="https://github.com/anton18-png/Mate-Security/issues" target="_blank">Ошибки</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Лицензия</h4>
+          <ul>
+            <li>MIT License</li>
+            <li>Открытый исходный код</li>
+            <li>Бесплатно для всех</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>Mate Security — open-source проект под лицензией MIT</p>
+        <p>Создано с <span class="heart">♥</span> в 2026 году</p>
+      </div>
     </div>
   </footer>
 
+  <script src="script.js" defer></script>
 </body>
 </html>
