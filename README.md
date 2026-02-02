@@ -24,6 +24,12 @@
 - Python 3.9+
 - PyInstaller
 
+# Установка
+
+1. Скачай Python с [python.org](https://www.python.org/downloads/) и установи с галочкой "Add Python to PATH"
+2. Скачай релиз с [Releases](https://github.com/anton18-png/Mate-Security/releases)  
+3. Запусти `Mate-Security-Setup.exe`
+
 # Инструкция по установке Mate-Security
 
 ## Предварительные требования
@@ -238,5 +244,3 @@ Mate-Security/
 ---
 
 **Mate Security** — твой бесплатный open-source щит для Windows 💚
-
-
