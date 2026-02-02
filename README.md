@@ -2,6 +2,8 @@
 
 Лёгкий, современный и полностью бесплатный антивирус для Windows на базе **ClamAV**
 
+<img width="1445" height="732" alt="image" src="https://github.com/user-attachments/assets/fc5840de-ae9a-46aa-b29e-84047337b31a" />
+
 ## Возможности
 
 - **Ручное сканирование** файлов, папок и дисков  
@@ -244,3 +246,4 @@ Mate-Security/
 ---
 
 **Mate Security** — твой бесплатный open-source щит для Windows 💚
+
