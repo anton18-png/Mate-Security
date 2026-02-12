@@ -16,6 +16,7 @@ from core.scanner import run_clamscan, filter_excluded
 from core.realtime import RealTimeMonitor
 from core.password_manager import PasswordDatabase
 from core.autostart import enable_autostart, disable_autostart, is_autostart_enabled
+from core.system_monitor import SystemMonitorTab
 
 
 class AntivirusApp(ctk.CTk):
@@ -79,33 +80,35 @@ class AntivirusApp(ctk.CTk):
         self.btn_main = ctk.CTkButton(sidebar, text="Главная", command=self._show_main_tab)
         self.btn_quarantine = ctk.CTkButton(sidebar, text="Карантин", command=self._show_quarantine_tab)
         self.btn_passwords = ctk.CTkButton(sidebar, text="Менеджер паролей", command=self._show_passwords_tab)
+        self.btn_monitor = ctk.CTkButton(sidebar, text="Монитор системы", command=self._show_monitor_tab)
         self.btn_settings = ctk.CTkButton(sidebar, text="Настройки", command=self._show_settings_tab)
 
         self.btn_main.grid(row=1, column=0, padx=20, pady=5, sticky="ew")
         self.btn_quarantine.grid(row=2, column=0, padx=20, pady=5, sticky="ew")
         self.btn_passwords.grid(row=3, column=0, padx=20, pady=5, sticky="ew")
-        self.btn_settings.grid(row=4, column=0, padx=20, pady=5, sticky="ew")
+        self.btn_monitor.grid(row=4, column=0, padx=20, pady=5, sticky="ew")
+        self.btn_settings.grid(row=5, column=0, padx=20, pady=5, sticky="ew")
 
         self.realtime_switch = ctk.CTkSwitch(
             sidebar,
             text="Защита в реальном времени",
             command=self._toggle_realtime,
         )
-        self.realtime_switch.grid(row=5, column=0, padx=20, pady=(20, 5), sticky="w")
+        self.realtime_switch.grid(row=6, column=0, padx=20, pady=(20, 5), sticky="w")
 
-        self.economy_switch = ctk.CTkSwitch(
-            sidebar,
-            text="Экономный режим",
-            command=self._toggle_economy,
-        )
-        self.economy_switch.grid(row=6, column=0, padx=20, pady=(0, 10), sticky="w")
+        # self.economy_switch = ctk.CTkSwitch(
+        #     sidebar,
+        #     text="Экономный режим",
+        #     command=self._toggle_economy,
+        # )
+        # self.economy_switch.grid(row=7, column=0, padx=20, pady=(0, 10), sticky="w")
 
         update_btn = ctk.CTkButton(
             sidebar,
             text="Обновить базы",
             command=self._update_databases_threaded,
         )
-        update_btn.grid(row=8, column=0, padx=20, pady=(10, 10), sticky="ew")
+        update_btn.grid(row=9, column=0, padx=20, pady=(10, 10), sticky="ew")
 
         self.status_label = ctk.CTkLabel(
             sidebar,
@@ -113,26 +116,32 @@ class AntivirusApp(ctk.CTk):
             anchor="w",
             wraplength=160,
         )
-        self.status_label.grid(row=9, column=0, padx=20, pady=10, sticky="sw")
+        self.status_label.grid(row=10, column=0, padx=20, pady=10, sticky="sw")
 
         self.content = ctk.CTkFrame(self, corner_radius=0)
         self.content.grid(row=0, column=1, sticky="nsew")
         self.content.grid_rowconfigure(0, weight=1)
         self.content.grid_columnconfigure(0, weight=1)
 
+        # Создание вкладок
         self.main_tab = ctk.CTkFrame(self.content)
         self.quarantine_tab = ctk.CTkFrame(self.content)
         self.passwords_tab = ctk.CTkFrame(self.content)
+        self.monitor_tab = ctk.CTkFrame(self.content)  # Добавлено
         self.settings_tab = ctk.CTkFrame(self.content)
 
-        for tab in (self.main_tab, self.quarantine_tab, self.passwords_tab, self.settings_tab):
+        # Размещение вкладок
+        for tab in (self.main_tab, self.quarantine_tab, self.passwords_tab, self.monitor_tab, self.settings_tab):
             tab.grid(row=0, column=0, sticky="nsew")
 
+        # Построение содержимого вкладок
         self._build_main_tab()
         self._build_quarantine_tab()
         self._build_passwords_tab()
+        self._build_monitor_tab()  # Добавлено
         self._build_settings_tab()
 
+        # Показываем главную вкладку
         self._show_main_tab()
 
     # ---- tray ----
@@ -192,6 +201,17 @@ class AntivirusApp(ctk.CTk):
 
     def _show_settings_tab(self) -> None:
         self.settings_tab.tkraise()
+
+    def _show_monitor_tab(self) -> None:
+        self.monitor_tab.tkraise()
+        self.status_label.configure(text="Мониторинг системы")
+
+    def _build_monitor_tab(self) -> None:
+        """Создание вкладки мониторинга системы"""
+        self.system_monitor = SystemMonitorTab(
+            self.monitor_tab,
+            log_callback=self._log
+        )
 
     # ---- Main tab ----
     def _build_main_tab(self) -> None:
@@ -815,6 +835,8 @@ class AntivirusApp(ctk.CTk):
             proc.wait()
         self.status_label.configure(text="Базы данных обновлены")
         self._log("Обновление баз завершено.\n")
+
+    
 
     # ---- Autostart ----
     def _enable_autostart(self) -> None:

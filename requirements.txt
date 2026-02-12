@@ -2,3 +2,7 @@ customtkinter
 watchdog
 pystray
 Pillow
+GPUtil
+psutil
+py-cpuinfo
+pyinstaller
