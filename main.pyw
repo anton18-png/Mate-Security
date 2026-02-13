@@ -1,10 +1,30 @@
-import os
 import sys
-
-# Add project root to sys.path
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-from gui.app import run_gui
+import tkinter.messagebox as messagebox
 
 if __name__ == "__main__":
-    run_gui()
+    if getattr(sys, 'frozen', False):
+        # Запуск в скомпилированном exe файле
+        messagebox.showwarning(
+            "Ошибка компиляции",
+            "ВНИМАНИЕ! Эта скомпилированная версия содержит критический баг:\n\n"
+            "При запуске exe файла программа бесконечно запускает саму себя, "
+            "создавая множество процессов и открывая бесконечные окна cmd.\n\n"
+            "Это проблема в коде, которую нужно исправить в исходниках.\n\n"
+            "ВАРИАНТЫ РЕШЕНИЯ:\n"
+            "1. Запускайте программу через Python (main.pyw) для отладки\n"
+            "2. Используйте предыдущую стабильную версию\n"
+            "3. Исправьте баг в коде и перекомпилируйте\n\n"
+        )
+    else:
+        # Запуск в обычном Python окружении - запускаем GUI
+        try:
+            from gui.app import run_gui
+            print("Запуск в режиме разработки...")
+            run_gui()
+        except Exception as e:
+            messagebox.showerror(
+                "Ошибка запуска",
+                f"Не удалось запустить приложение:\n\n{str(e)}\n\n"
+                "Убедитесь что все зависимости установлены:\n"
+                "pip install -r requirements.txt"
+            )
